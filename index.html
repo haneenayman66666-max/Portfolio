@@ -88,7 +88,6 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .sk-card-pill{font-size:0.8rem;font-weight:300;color:var(--mid);padding:5px 14px;border:1px solid rgba(61,35,24,0.12);border-radius:20px;background:var(--cream);transition:all 0.2s;}
 .sk-card:hover .sk-card-pill{border-color:rgba(201,132,122,0.3);}
 /* ── PROJECTS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
 .events-scroll-wrap{position:relative;}
 .events-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px;scrollbar-width:thin;scrollbar-color:var(--rose-light) transparent;}
 .events-scroll::-webkit-scrollbar{height:6px;}
@@ -182,10 +181,10 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
 .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--rose),var(--rose-light));transform:scaleX(0);transform-origin:left;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);z-index:2;}
 .proj-card:hover::before{transform:scaleX(1);}
 /* Gallery */
-.proj-gallery{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--parchment);}
+.proj-gallery{width:100%;height:240px;position:relative;overflow:hidden;background:#f0ede6;}
 .proj-gallery-track{display:flex;width:100%;height:100%;transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);}
-.proj-gallery-slide{flex:0 0 100%;height:100%;overflow:hidden;}
-.proj-gallery-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.proj-gallery-slide{flex:0 0 100%;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f0ede6;}
+.proj-gallery-slide img{width:100%;height:100%;object-fit:contain;display:block;}
 .proj-gallery-btn{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;background:rgba(13,27,46,0.6);border:none;border-radius:50%;color:#fff;font-size:0.85rem;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;}
 .proj-card:hover .proj-gallery-btn{opacity:1;}
 .proj-gallery-btn.prev{left:10px;}
@@ -224,6 +223,7 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
   .exp-list{padding-left:24px;}
 }
 </style>
+import { Analytics } from "@vercel/analytics/next"
 </head>
 <body>
 
@@ -517,8 +517,33 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
       </div>
     </div>
 
-  </div>
-</div>
+    <!-- Project 4: BI Course Project -->
+    <div class="proj-card reveal">
+      <div class="proj-gallery" id="gallery-bi">
+        <div class="proj-gallery-track" id="track-bi">
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/dashboard.png" alt="Retail Sales Power BI Dashboard" loading="lazy"></div>
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/Classification_Model_Design.png" alt="Classification Model Design" loading="lazy"></div>
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/Classification_Tree.png" alt="Decision Tree Results" loading="lazy"></div>
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/Regression_Model_Design.png" alt="Regression Model Design" loading="lazy"></div>
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/Clustering_Model_Design.png" alt="Clustering Model Design" loading="lazy"></div>
+          <div class="proj-gallery-slide"><img src="https://raw.githubusercontent.com/HaneenAyman23/BI-course-project/main/screenshots/Cluster_Graph.png" alt="Cluster Model Results" loading="lazy"></div>
+        </div>
+        <button class="proj-gallery-btn prev" onclick="slideGallery('bi',-1)">&#8249;</button>
+        <button class="proj-gallery-btn next" onclick="slideGallery('bi',1)">&#8250;</button>
+        <div class="proj-gallery-dots" id="dots-bi"></div>
+      </div>
+      <div class="proj-body">
+        <p class="proj-type">Business Intelligence · Machine Learning · Data Analytics</p>
+        <h3 class="proj-title">Retail Sales BI & ML Analysis <span style="font-size:0.75em;font-style:italic;color:var(--muted);">· Business Intelligence Course Project</span></h3>
+        <p class="proj-desc">End-to-end retail sales analysis on 500 orders from the Superstore dataset (2022–2023). Built an interactive Power BI dashboard tracking $492K in revenue, 10% profit margin, and performance across segments and categories — paired with three RapidMiner ML models: Decision Tree classification, K-Means clustering (3 segments across 500 items), and Linear Regression for profit prediction.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Power BI</span><span class="proj-tag">RapidMiner</span><span class="proj-tag">Decision Tree</span><span class="proj-tag">K-Means Clustering</span><span class="proj-tag">Linear Regression</span><span class="proj-tag">BI Dashboard</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/HaneenAyman23/BI-course-project" target="_blank" class="proj-btn proj-btn-filled">GitHub Repo ↗</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -838,7 +863,7 @@ function goGallery(id,index){
   document.querySelectorAll(`#dots-${id} .proj-gallery-dot`).forEach((d,i)=>d.classList.toggle('active',i===s.current));
 }
 function slideGallery(id,dir){const s=galleryState[id];if(!s)return;goGallery(id,s.current+dir);}
-['smarthome','webdesign','analytics'].forEach(initGallery);
+['smarthome','webdesign','analytics','bi'].forEach(initGallery);
 
 // ── EVENTS SCROLL HINT (fade hint once user scrolls) ──
 (function(){

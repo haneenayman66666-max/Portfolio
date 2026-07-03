@@ -313,7 +313,7 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
   <h2 class="s-title">Leadership &<br><em>Volunteer Experience</em></h2>
   <div class="exp-list">
 
-       <div class="exp-row reveal">
+    <div class="exp-row reveal">
       <div class="exp-meta">
         <span class="exp-year-label">June 2026 – Present</span>
         <span class="exp-org-line">TechTalk</span>
@@ -817,8 +817,8 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style
 function animRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}
 animRing();
 document.querySelectorAll('a,button,.ev-card,.cert-btn').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';cursor.style.background='transparent';cursor.style.border='1px solid var(--rose)';ring.style.opacity='0';});
-  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';cursor.style.background='var(--rose)';cursor.style.border='none';ring.style.opacity='0.5';});
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';cursor.style.background='transparent';cursor.style.border='1px solid #1B2A4A';ring.style.opacity='0';});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';cursor.style.background='#1B2A4A';cursor.style.border='none';ring.style.opacity='0.5';});
 });
 
 // ── SCROLL REVEAL ──

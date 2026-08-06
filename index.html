@@ -152,8 +152,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:180%;backgr
 .c-val a{color:var(--rose-light);text-decoration:none;transition:color 0.2s}
 .c-val a:hover{color:var(--rose)}
 .edu-block{margin-top:5rem;border:1px solid rgba(250,247,242,0.1);padding:40px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px;}
-.edu-uni{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--cream);margin-bottom:6px;}
-.edu-deg{font-size:0.85rem;color:rgba(250,247,242,0.5);font-weight:300}
+.edu-uni{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:#ffffff;margin-bottom:6px;}
+.edu-deg{font-size:0.85rem;color:#ffffff;font-weight:300}
 .edu-loc{font-size:0.78rem;color:var(--rose);margin-top:6px;letter-spacing:0.06em}
 .edu-year{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(201,132,122,0.25);}
 footer{background:#050b15;border-top:1px solid rgba(250,247,242,0.06);padding:32px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:100%;}
@@ -658,6 +658,9 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
         <span class="sk-card-pill">Power BI</span>
         <span class="sk-card-pill">RapidMiner</span>
         <span class="sk-card-pill">SQL</span>
+        <span class="sk-card-pill">PostgreSQL</span>
+        <span class="sk-card-pill">Supabase</span>
+        <span class="sk-card-pill">Streamlit</span>
         <span class="sk-card-pill">Microsoft Excel</span>
         <span class="sk-card-pill">Google Sheets</span>
         <span class="sk-card-pill">Data Visualization</span>
@@ -696,6 +699,37 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
         <span class="sk-card-pill">Bootstrap</span>
         <span class="sk-card-pill">GitHub</span>
         <span class="sk-card-pill">VS Code</span>
+        <span class="sk-card-pill">Figma</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <div class="sk-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Frontend Development
+      </div>
+      <div class="sk-card-pills">
+        <span class="sk-card-pill">HTML5</span>
+        <span class="sk-card-pill">CSS3</span>
+        <span class="sk-card-pill">JavaScript</span>
+        <span class="sk-card-pill">Bootstrap 5</span>
+        <span class="sk-card-pill">Responsive Design</span>
+        <span class="sk-card-pill">UI/UX Principles</span>
+      </div>
+    </div>
+
+    <div class="sk-card reveal">
+      <div class="sk-card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        Backend Development
+      </div>
+      <div class="sk-card-pills">
+        <span class="sk-card-pill">SQL</span>
+        <span class="sk-card-pill">PostgreSQL</span>
+        <span class="sk-card-pill">Supabase</span>
+        <span class="sk-card-pill">Firebase</span>
+        <span class="sk-card-pill">Database Design</span>
+        <span class="sk-card-pill">API Integration</span>
       </div>
     </div>
 
@@ -711,7 +745,6 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
         <span class="sk-card-pill">Microsoft Planner</span>
         <span class="sk-card-pill">Google Workspace</span>
         <span class="sk-card-pill">Microsoft Office Suite</span>
-        <span class="sk-card-pill">Figma</span>
       </div>
     </div>
 
@@ -723,6 +756,7 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
       <div class="sk-card-pills">
         <span class="sk-card-pill">Public Speaking</span>
         <span class="sk-card-pill">Professional Writing</span>
+        <span class="sk-card-pill">Communication</span>
         <span class="sk-card-pill">Stakeholder Communication</span>
         <span class="sk-card-pill">Team Facilitation</span>
         <span class="sk-card-pill">Cross-Cultural Collaboration</span>
@@ -807,7 +841,16 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
           <div>
             <p class="edu-uni">Galala University</p>
             <p class="edu-deg">Bachelor of Business Information Systems (BIS) · Faculty of Administrative Sciences</p>
-            <p class="edu-deg" style="margin-top:10px;opacity:0.75;">Coursework: Data Analysis · Business Intelligence · Database Design & Management · Information Systems Analysis & Design · ERP Systems · Odoo · Applications in Computer Programming · Planning & Management of Information Systems</p>
+            <div style="margin-top:18px;">
+              <p style="font-size:0.72rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#ffffff;opacity:0.55;margin-bottom:10px;">Coursework</p>
+              <div style="display:flex;flex-direction:column;gap:9px;">
+                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Systems & Analytics —</span> Data Analysis · Business Intelligence · Database Design & Management · Information Systems Analysis & Design · ERP Systems · Odoo · Applications in Computer Programming · Planning & Management of IS Projects</p>
+                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Business & Analytical Skills —</span> Communication Skills · Critical Thinking · Research</p>
+                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Finance & Accounting —</span> Fundamentals of Finance & Financial Management · Mathematics of Finance · Financial Management · Cost Accounting · Intermediate Accounting · Principles of Managerial Accounting</p>
+                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Economics & Statistics —</span> Fundamentals of Macroeconomics · Statistics of Finance</p>
+                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Commerce & Operations —</span> E-commerce & E-Business · Operations Management · Logistics & Supply Chain Management</p>
+              </div>
+            </div>
           </div>
           <div class="edu-year">2027</div>
         </div>

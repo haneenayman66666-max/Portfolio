@@ -156,6 +156,21 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:180%;backgr
 .edu-deg{font-size:0.85rem;color:#ffffff;font-weight:300}
 .edu-loc{font-size:0.78rem;color:var(--rose);margin-top:6px;letter-spacing:0.06em}
 .edu-year{font-family:var(--serif);font-size:3rem;font-weight:300;color:rgba(201,132,122,0.25);}
+/* ── EDUCATION SECTION (integrated, wide) ── */
+.edu-header{display:flex;align-items:flex-start;gap:22px;margin-bottom:44px;padding-bottom:36px;border-bottom:1px solid rgba(61,35,24,0.1);}
+.edu-icon-badge{width:54px;height:54px;flex-shrink:0;border:1px solid rgba(181,112,63,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--rose);background:var(--rose-pale);}
+.edu-uni-eyebrow{font-size:0.66rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);margin-bottom:7px;}
+.edu-uni-name{font-family:var(--serif);font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:300;color:var(--espresso);margin-bottom:6px;line-height:1.15;}
+.edu-uni-deg{font-size:0.92rem;color:var(--mid);font-weight:300;}
+.edu-courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px 36px;width:100%;}
+.edu-col-label{font-size:0.68rem;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--rose);margin-bottom:15px;}
+.edu-col-list{display:flex;flex-direction:column;gap:11px;}
+.edu-course-item{font-size:0.87rem;line-height:1.5;color:var(--mid);font-weight:300;position:relative;padding-left:15px;}
+.edu-course-item::before{content:'';position:absolute;left:0;top:0.6em;width:6px;height:1px;background:var(--rose-light);}
+@media(max-width:600px){
+  .edu-header{gap:16px;margin-bottom:34px;padding-bottom:28px;}
+  .edu-courses-grid{gap:30px 24px;}
+}
 footer{background:#050b15;border-top:1px solid rgba(250,247,242,0.06);padding:32px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:100%;}
 footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
 .foot-links{display:flex;gap:20px}
@@ -241,6 +256,7 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
 <nav>
   <a href="#" class="nav-logo">Haneen Ayman Mohamed</a>
   <ul class="nav-links">
+    <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#leadership">Leadership</a></li>
     <li><a href="#events">Events</a></li>
@@ -273,6 +289,68 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
   <div class="marquee-track">
     <span>Talent Management</span><span>Project Coordination</span><span>Event Operations</span><span>Business Analysis</span><span>Recruitment Strategy</span><span>HR Workflows</span><span>Data Analytics</span><span>Leadership</span>
     <span>Talent Management</span><span>Project Coordination</span><span>Event Operations</span><span>Business Analysis</span><span>Recruitment Strategy</span><span>HR Workflows</span><span>Data Analytics</span><span>Leadership</span>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section reveal" id="education">
+  <p class="s-label">Background</p>
+  <h2 class="s-title">Education</h2>
+
+  <div class="edu-header reveal">
+    <div class="edu-icon-badge">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 10v6"/></svg>
+    </div>
+    <div>
+      <p class="edu-uni-eyebrow">Faculty of Administrative Sciences</p>
+      <p class="edu-uni-name">Galala University</p>
+      <p class="edu-uni-deg">Bachelor of Business Information Systems (BIS) · Expected 2027</p>
+    </div>
+  </div>
+
+  <div class="edu-courses-grid reveal">
+    <div class="edu-col">
+      <p class="edu-col-label">Systems & Analytics</p>
+      <div class="edu-col-list">
+        <p class="edu-course-item">Data Analysis</p>
+        <p class="edu-course-item">Business Intelligence</p>
+        <p class="edu-course-item">Database Design & Management</p>
+        <p class="edu-course-item">Information Systems Analysis & Design</p>
+        <p class="edu-course-item">ERP Systems</p>
+        <p class="edu-course-item">Odoo</p>
+        <p class="edu-course-item">Applications in Computer Programming</p>
+        <p class="edu-course-item">Planning & Management of IS Projects</p>
+      </div>
+    </div>
+    <div class="edu-col">
+      <p class="edu-col-label">Business & Analytical Skills</p>
+      <div class="edu-col-list">
+        <p class="edu-course-item">Communication Skills</p>
+        <p class="edu-course-item">Critical Thinking</p>
+        <p class="edu-course-item">Research</p>
+      </div>
+    </div>
+    <div class="edu-col">
+      <p class="edu-col-label">Finance & Accounting</p>
+      <div class="edu-col-list">
+        <p class="edu-course-item">Fundamentals of Finance & Financial Management</p>
+        <p class="edu-course-item">Mathematics of Finance</p>
+        <p class="edu-course-item">Financial Management</p>
+        <p class="edu-course-item">Cost Accounting</p>
+        <p class="edu-course-item">Intermediate Accounting</p>
+        <p class="edu-course-item">Principles of Managerial Accounting</p>
+        <p class="edu-course-item">Fundamentals of Macroeconomics</p>
+        <p class="edu-course-item">Statistics of Finance</p>
+      </div>
+    </div>
+    <div class="edu-col">
+      <p class="edu-col-label">Commerce & Operations</p>
+      <div class="edu-col-list">
+        <p class="edu-course-item">E-commerce & E-Business</p>
+        <p class="edu-course-item">Operations Management</p>
+        <p class="edu-course-item">Logistics & Supply Chain Management</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -837,23 +915,6 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
           <p>What drives me is the space between strategy and execution — turning plans into outcomes that actually work. My experience spans recruitment leadership, project coordination at a tech company, and managing large-scale university events.</p>
           <p>I'm currently open to internship opportunities, collaborative projects, and conversations about careers in HR, business analysis, and project management.</p>
         </div>
-        <div class="edu-block reveal">
-          <div>
-            <p class="edu-uni">Galala University</p>
-            <p class="edu-deg">Bachelor of Business Information Systems (BIS) · Faculty of Administrative Sciences</p>
-            <div style="margin-top:18px;">
-              <p style="font-size:0.72rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#ffffff;opacity:0.55;margin-bottom:10px;">Coursework</p>
-              <div style="display:flex;flex-direction:column;gap:9px;">
-                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Systems & Analytics —</span> Data Analysis · Business Intelligence · Database Design & Management · Information Systems Analysis & Design · ERP Systems · Odoo · Applications in Computer Programming · Planning & Management of IS Projects</p>
-                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Business & Analytical Skills —</span> Communication Skills · Critical Thinking · Research</p>
-                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Finance & Accounting —</span> Fundamentals of Finance & Financial Management · Mathematics of Finance · Financial Management · Cost Accounting · Intermediate Accounting · Principles of Managerial Accounting</p>
-                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Economics & Statistics —</span> Fundamentals of Macroeconomics · Statistics of Finance</p>
-                <p style="font-size:0.85rem;line-height:1.65;color:#ffffff;"><span style="color:var(--rose-light);font-weight:500;">Commerce & Operations —</span> E-commerce & E-Business · Operations Management · Logistics & Supply Chain Management</p>
-              </div>
-            </div>
-          </div>
-          <div class="edu-year">2027</div>
-        </div>
       </div>
       <div class="reveal">
         <p class="about-s-label">Contact</p>
@@ -981,7 +1042,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
 
 // ── ACTIVE NAV HIGHLIGHT ──
 const navAs = document.querySelectorAll('.nav-links a');
-const sectionIds = ['experience','leadership','events','projects','skills','certifications','contact'];
+const sectionIds = ['education','experience','leadership','events','projects','skills','certifications','contact'];
 
 function updateActiveNav(){
   const navHeight = document.querySelector('nav').offsetHeight;

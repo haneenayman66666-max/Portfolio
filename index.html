@@ -917,7 +917,10 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
       <div class="cert-frame" id="frame-javascript"><span class="cert-frame-loading">Loading…</span></div>
       <p class="cert-name">JavaScript Programming Course For Beginners</p><p class="cert-issuer">ScholarHat</p><p class="cert-date">September 2026</p>
     </button>
-  </div>
+    <button class="cert-btn reveal" onclick="openCert('agile')">
+      <div class="cert-frame" id="frame-agile"><span class="cert-frame-loading">Loading…</span></div>
+      <p class="cert-name">Agile Project Management</p><p class="cert-issuer">Certificate</p><p class="cert-date">October 2026</p>
+    </button>  </div>
 </div>
 
 <div class="modal-overlay" id="certModal" onclick="closeCertOnOverlay(event)">
@@ -1009,6 +1012,7 @@ const certData = {
   mcp:        { title:'Introduction to Model Context Protocol (MCP) · Anthropic · May 2026', viewerUrl: GDOCS(RAW + 'Introduction%20to%20MCP.pdf') },
   datascience: { title:'Data Science & Analytics · HP LIFE (HP Foundation) · August 2026', viewerUrl: GDOCS(RAW + 'Data%20Science%20%26%20Analytics.pdf') },
   careerreadiness: { title:'EST Workshop Series · University Center for Career Development, Galala University · August 2026', viewerUrl: GDOCS(RAW + 'EST%20Workshop%20UCCD.pdf') },
+  agile:     { title:'Agile Project Management', viewerUrl: GDOCS(RAW + 'Agile%20Project%20Management.pdf') },
   javascript: { title:'JavaScript Programming Course For Beginners · ScholarHat · September 2026', viewerUrl: GDOCS(RAW + 'Java%20Script%20Scholar.pdf') }
 };
 

@@ -81,8 +81,8 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:180%;backgr
 .exp-year-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);margin-bottom:8px;display:block;font-family:var(--sans);}
 .exp-org-line{font-family:var(--sans);font-size:0.95rem;font-weight:400;font-style:normal;color:var(--muted);line-height:1.4;display:block;margin-bottom:14px;}
 .exp-meta-role{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--espresso);line-height:1.25;display:block;}
-.exp-cert-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:0.7rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose);text-decoration:none;border-bottom:1px solid var(--rose-light);padding-bottom:2px;transition:opacity 0.2s;}
-.exp-cert-link:hover{opacity:0.7;}
+.exp-cert{margin-top:20px;width:100%;max-width:260px;}
+.exp-cert .cert-frame{height:180px;}
 .exp-content{padding-top:6px;}
 .exp-role{display:none;}
 .exp-p{font-size:0.95rem;line-height:1.85;color:var(--mid);margin-bottom:1rem;font-weight:300;}
@@ -374,7 +374,10 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
         <span class="exp-year-label">Aug 2026</span>
         <span class="exp-org-line">EL Halim Company</span>
         <span class="exp-meta-role">Data Cleaning &amp; Analysis Intern</span>
-        <a href="https://github.com/haneenayman66666-max/Profile-1/blob/main/Haneen%20Ayman%20Al%20Haleem%20Certificate.pdf" target="_blank" rel="noopener" class="exp-cert-link">View internship certificate ↗</a>
+        <button class="cert-btn exp-cert" onclick="openCert('intern')">
+          <div class="cert-frame" id="frame-intern"><span class="cert-frame-loading">Loading…</span></div>
+          <p class="cert-name">Data Cleaning &amp; Analysis Internship Certificate</p><p class="cert-issuer">EL Halim Company</p><p class="cert-date">August 2026</p>
+        </button>
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Data Cleaning &amp; Analysis Intern</h3>
@@ -1015,6 +1018,7 @@ const certData = {
   mcp:        { title:'Introduction to Model Context Protocol (MCP) · Anthropic · May 2026', viewerUrl: GDOCS(RAW + 'Introduction%20to%20MCP.pdf') },
   datascience: { title:'Data Science & Analytics · HP LIFE (HP Foundation) · August 2026', viewerUrl: GDOCS(RAW + 'Data%20Science%20%26%20Analytics.pdf') },
   careerreadiness: { title:'EST Workshop Series · University Center for Career Development, Galala University · August 2026', viewerUrl: GDOCS(RAW + 'EST%20Workshop%20UCCD.pdf') },
+  intern:    { title:'Data Cleaning & Analysis Internship Certificate · EL Halim Company · August 2026', viewerUrl: GDOCS(RAW + 'Haneen%20Ayman%20Al%20Haleem%20Certificate.pdf') },
   agile:     { title:'Agile Project Management', viewerUrl: GDOCS(RAW + 'Agile%20Project%20Management.pdf') },
   javascript: { title:'JavaScript Programming Course For Beginners · ScholarHat · September 2026', viewerUrl: GDOCS(RAW + 'Java%20Script%20Scholar.pdf') }
 };

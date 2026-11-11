@@ -81,8 +81,6 @@ nav::before{content:'';position:absolute;top:0;left:0;right:0;height:180%;backgr
 .exp-year-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);margin-bottom:8px;display:block;font-family:var(--sans);}
 .exp-org-line{font-family:var(--sans);font-size:0.95rem;font-weight:400;font-style:normal;color:var(--muted);line-height:1.4;display:block;margin-bottom:14px;}
 .exp-meta-role{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--espresso);line-height:1.25;display:block;}
-.exp-cert{margin-top:20px;width:100%;max-width:260px;}
-.exp-cert .cert-frame{height:180px;}
 .exp-content{padding-top:6px;}
 .exp-role{display:none;}
 .exp-p{font-size:0.95rem;line-height:1.85;color:var(--mid);margin-bottom:1rem;font-weight:300;}
@@ -255,6 +253,39 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
   .exp-list{padding-left:0;}
   .exp-row{grid-template-columns:1fr;gap:6px;}
 }
+/* ── MOBILE HERO FIX ──
+   The desktop .hero has a fixed height + overflow:hidden, which clipped the
+   stacked photo on phones. Let the hero grow with its content instead. */
+@media(max-width:900px){
+  .hero{height:auto;max-height:none;min-height:0;overflow:visible;}
+  .hero-left{padding:96px 6% 32px;}
+  .hero-right{height:auto;min-height:0;aspect-ratio:4/5;max-height:620px;width:100%;}
+  .hero-img{object-position:center top;}
+  .hero-stat{bottom:24px;right:24px;}
+  .hero-stat strong{font-size:2.2rem;}
+}
+/* ── MOBILE NAV (hamburger + full-screen menu) ── */
+.nav-toggle{display:none;}
+@media(max-width:900px){
+  nav{padding:14px 6%;}
+  .nav-logo{font-size:1.05rem;}
+  .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:10px;background:transparent;border:1px solid rgba(13,27,46,0.2);border-radius:2px;position:relative;z-index:1;cursor:pointer;}
+  .nav-toggle span{display:block;width:100%;height:1.5px;background:var(--espresso);transition:transform 0.3s ease,opacity 0.2s ease;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .nav-links{display:none;position:fixed;inset:0;z-index:0;background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;padding:80px 8% 40px;overflow-y:auto;}
+  .nav-links.open{display:flex;}
+  .nav-links li{width:100%;text-align:center;}
+  .nav-links a{display:block;font-size:1.6rem;padding:10px 0;color:var(--mid);}
+  .nav-links a.active{transform:none;filter:none;text-shadow:none;color:var(--rose);font-weight:500;letter-spacing:0.04em;}
+  .nav-links a:hover{transform:none;}
+}
+/* Custom cursor is mouse-only; hide it on touch screens (it showed as a stray circle top-left) */
+@media(hover:none),(pointer:coarse){
+  .cursor-dot-el,.cursor-ring-el{display:none;}
+  body,a,button,.btn,.cert-btn,.modal-close,.proj-gallery-btn,.proj-gallery-dot,.ev-card{cursor:auto;}
+}
 </style>
 </head>
 <body>
@@ -264,7 +295,8 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
 
 <nav>
   <a href="#" class="nav-logo">Haneen Ayman Mohamed</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#leadership">Leadership</a></li>
@@ -374,8 +406,6 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
         <span class="exp-year-label">Aug 2026</span>
         <span class="exp-org-line">EL Halim Company</span>
         <span class="exp-meta-role">Data Cleaning &amp; Analysis Intern</span>
-        <button class="cert-btn exp-cert" onclick="openCert('intern')">
-          <div class="cert-frame" id="frame-intern"><span class="cert-frame-loading">Loading…</span></div>        </button>
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Data Cleaning &amp; Analysis Intern</h3>
@@ -469,6 +499,29 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
 
     <div class="events-scroll-wrap reveal">
       <div class="events-scroll" id="eventsScroll">
+
+        <div class="ev-card">
+          <div class="ev-photo">
+            <img
+              src="https://raw.githubusercontent.com/haneenayman66666-max/Linkedin/main/1794417525891.jpg"
+              alt="Orientation Day at UCCD"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            >
+            <div class="ev-photo-placeholder" style="display:none">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <div class="ev-body">
+            <p class="ev-date-str">November 2026</p>
+            <h3 class="ev-name">Orientation Day at UCCD</h3>
+            <p class="ev-desc">Wore three hats at Galala University's University Center for Career Development orientation: organizing the event to introduce 40+ students to the Center's services and opportunities, evaluating 30+ club members as HR member, and leading the media team through 25+ tracked tasks.</p>
+            <div class="ev-footer">
+              <span class="ev-badge">Organizer · HR Member · Media Lead</span>
+              <a href="https://lnkd.in/p/dkDcR9HT" target="_blank" class="ev-li">View on LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
 
         <div class="ev-card">
           <div class="ev-photo">
@@ -865,7 +918,7 @@ footer p{font-size:0.75rem;color:rgba(250,247,242,0.25);letter-spacing:0.06em}
       </div>
       <div class="sk-card-pills">
         <span class="sk-card-pill">Arabic — Native</span>
-        <span class="sk-card-pill">English — Conversational</span>
+        <span class="sk-card-pill">English — Fluent / Near-Native</span>
       </div>
     </div>
 
@@ -1016,7 +1069,6 @@ const certData = {
   mcp:        { title:'Introduction to Model Context Protocol (MCP) · Anthropic · May 2026', viewerUrl: GDOCS(RAW + 'Introduction%20to%20MCP.pdf') },
   datascience: { title:'Data Science & Analytics · HP LIFE (HP Foundation) · August 2026', viewerUrl: GDOCS(RAW + 'Data%20Science%20%26%20Analytics.pdf') },
   careerreadiness: { title:'EST Workshop Series · University Center for Career Development, Galala University · August 2026', viewerUrl: GDOCS(RAW + 'EST%20Workshop%20UCCD.pdf') },
-  intern:    { title:'Data Cleaning & Analysis Internship Certificate · EL Halim Company · August 2026', viewerUrl: GDOCS(RAW + 'Haneen%20Ayman%20Al%20Haleem%20Certificate.pdf') },
   agile:     { title:'Agile Project Management', viewerUrl: GDOCS(RAW + 'Agile%20Project%20Management.pdf') },
   javascript: { title:'JavaScript Programming Course For Beginners · ScholarHat · September 2026', viewerUrl: GDOCS(RAW + 'Java%20Script%20Scholar.pdf') }
 };
@@ -1086,6 +1138,23 @@ function closeCert(){
 }
 function closeCertOnOverlay(e){if(e.target===document.getElementById('certModal'))closeCert();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCert();});
+
+// ── MOBILE NAV TOGGLE ──
+(function(){
+  const btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');
+  if(!btn||!menu)return;
+  function setMenu(open){
+    menu.classList.toggle('open',open);
+    btn.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    document.body.style.overflow=open?'hidden':'';
+  }
+  btn.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
+  window.addEventListener('resize',()=>{if(window.innerWidth>900)setMenu(false);});
+})();
 
 // ── ACTIVE NAV HIGHLIGHT ──
 const navAs = document.querySelectorAll('.nav-links a');
